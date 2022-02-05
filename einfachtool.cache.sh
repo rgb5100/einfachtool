@@ -26,7 +26,10 @@ remove_deb () {
 sudo apt remove einfachtool -y
 }
 install_deb () {
-read -p "Bitte wähle eine Version von 1.2 bis 1.3: " version
+read -p "Bitte wähle eine Version von 1.2 bis 1.3 oder new für die neuste Version: " version
+if [ $version = new ]; then
+version=1.3
+fi
 url
 sudo apt remove einfachtool -y
 sudo curl -o $file $version_url
