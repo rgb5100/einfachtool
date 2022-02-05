@@ -31,7 +31,6 @@ if [ $version = new ]; then
 version=1.3
 fi
 url
-sudo apt remove einfachtool -y
 sudo curl -o $file $version_url
 sudo apt deb $file
 sudo rm -R $file
