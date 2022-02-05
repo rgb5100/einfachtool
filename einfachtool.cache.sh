@@ -36,7 +36,7 @@ sudo apt deb $file
 sudo rm -R $file
 echo "-------------------------------------"
 echo Einfachtool $version wurde installiert.
-echo "Du kanst nun ausführen."
+echo "Du kanst es nun ausführen."
 echo "-------------------------------------"
 read -p "Soll nun einfachtool ausgefürt werden?[Y/n] " run
 if [ $run = y ]; then
