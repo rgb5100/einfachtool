@@ -1,5 +1,5 @@
 Package: einfachtool
-Version: 1.3
+Version: 1.4
 Priority: extra
 Architecture: all
 Depends: pwgen, gpg, pip, python3, git, screen, zip, coreutils
