@@ -9,6 +9,8 @@ Conflicts:
 Section:
 Breaks:
 Replaces:
+Recommends:
+Suggests:
 Priority: optional
 Homepage: www.github.com/rgb5100/einfachtool
 Description: Einfachtool .deb Paket
