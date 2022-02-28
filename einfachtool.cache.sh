@@ -32,7 +32,7 @@ version=1.3
 fi
 url
 sudo curl -o $file $version_url
-sudo apt deb $file
+sudo dpkg -i $file
 sudo rm -R $file
 echo "-------------------------------------"
 echo Einfachtool $version wurde installiert.
