@@ -14,10 +14,6 @@ if [ $action = 3 ]; then
 remove_deb
 fi
 }
-url () {
-curl -o $file $version_url
-chmod 700 $file
-}
 remove_deb () {
 sudo apt remove einfachtool -y
 }
@@ -64,7 +60,8 @@ fi
 if [ $type = alpha ]; then
 version_url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/$version
 fi
-sudo url
+sudo curl -o $file $version_url
+sudo chmod 700 $file
 sudo dpkg -i $file
 sudo rm -R $file
 echo "-------------------------------------"
