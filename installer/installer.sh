@@ -31,27 +31,44 @@ sudo apt remove einfachtool -y
 install_deb () {
 echo "1) Stable  2) Beta  3) Alpha"
 read -p "Bitte wähle einen Typ von einfachtool: " type
-read -p "Bitte wähle eine Version von 1.2 bis 1.3 oder new für die neuste Version: " version
 if [ $type = 1 ]; then
+type=stable
 curl -o cache https://raw.githubusercontent.com/rgb5100/einfachtool/main/stable/versions
 cache=`cat cache`
 $cache
+version_deb-file="$version".deb
+cache=""
+rm -R cache
 fi
 if [ $type = 2 ]; then
+type=beta
 curl -o cache https://raw.githubusercontent.com/rgb5100/einfachtool/main/beta/versions
 cache=`cat cache`
 $cache
+version_deb-file="$version".deb
+cache=""
+rm -R cache
 fi
 if [ $type = 3 ]; then
+type=alpha
 curl -o cache https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/versions
 cache=`cat cache`
 $cache
+version_deb-file="$version".deb
+cache=""
+rm -R cache
 fi
+read -p "Bitte wähle eine Version von $versions-1 bis $versions-2 oder new für die neuste Version: " version
 if [ $version = new ]; then
-version=1.3
+version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/$type/$versions-2
 fi
-url
-sudo curl -o $file $version_url
+if [ $type = 1 ]; then
+if [ $stable-$version = stable-$version ]; then
+
+else
+echo "Version ist ungültig!"
+fi
+sudo url
 sudo dpkg -i $file
 sudo rm -R $file
 echo "-------------------------------------"
