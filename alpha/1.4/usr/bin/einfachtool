@@ -1,5 +1,5 @@
 #! /bin/bash
-version=1.2
+version=1.4
 tool=0
 echo "Einfachtool Version $version"
 echo "1) Abbrechen  2) CLI-Messenger  3) Git  4) Passwort-Tools"
