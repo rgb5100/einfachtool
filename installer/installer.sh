@@ -82,6 +82,13 @@ if [ $run = J ]; then
 einfachtool
 fi
 }
-1_input
+end () {
 rm -R ~/.cache/installer-einfachtool
 cd $pwd
+}
+main () {
+init
+1_input
+end
+}
+main
