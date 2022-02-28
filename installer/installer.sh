@@ -15,18 +15,38 @@ remove_deb
 fi
 }
 url () {
-if [ $version = 1.2 ]; then
-version_url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/einfachtool-1.2.deb
+if 
+url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/stable/$version_deb-file m,
 fi
-if [ $version = 1.3 ]; then
-version_url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/einfachtool-1.3.deb
+if 
+url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/beta/$version_deb-file
+fi
+if 
+url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/$version_deb-file
 fi
 }
 remove_deb () {
 sudo apt remove einfachtool -y
 }
 install_deb () {
+echo "1) Stable  2) Beta  3) Alpha"
+read -p "Bitte wähle einen Typ von einfachtool: " type
 read -p "Bitte wähle eine Version von 1.2 bis 1.3 oder new für die neuste Version: " version
+if [ $type = 1 ]; then
+curl -o cache https://raw.githubusercontent.com/rgb5100/einfachtool/main/stable/versions
+cache=`cat cache`
+$cache
+fi
+if [ $type = 2 ]; then
+curl -o cache https://raw.githubusercontent.com/rgb5100/einfachtool/main/beta/versions
+cache=`cat cache`
+$cache
+fi
+if [ $type = 3 ]; then
+curl -o cache https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/versions
+cache=`cat cache`
+$cache
+fi
 if [ $version = new ]; then
 version=1.3
 fi
