@@ -1,0 +1,9 @@
+Package: einfachtool
+Version: 1.3
+Priority: extra
+Architecture: all
+Depends: pwgen, gpg, pip, python3, git, screen, zip, coreutils
+Installed-Size: 32,7
+Maintainer: RGB5100
+Homepage: www.github.com/rgb5100/einfachtool
+Description: Einfachtool .deb Paket
