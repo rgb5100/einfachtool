@@ -60,10 +60,10 @@ fi
 if [ $type = alpha ]; then
 version_url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/$version
 fi
-sudo curl -o cache $version_url
-sudo chmod 700 cache
-sudo dpkg -i cache
-sudo rm -R cache
+sudo curl -o cache.deb $version_url
+sudo chmod 700 cache.deb
+sudo dpkg -i cache.deb
+sudo rm -R cache.deb
 echo "-------------------------------------"
 echo Einfachtool $version wurde installiert.
 echo "Du kanst es nun ausführen."
