@@ -15,15 +15,8 @@ remove_deb
 fi
 }
 url () {
-if 
-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/stable/$version_deb-file m,
-fi
-if 
-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/beta/$version_deb-file
-fi
-if 
-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/$version_deb-file
-fi
+curl -o $file $version-url
+chmod 700 $file
 }
 remove_deb () {
 sudo apt remove einfachtool -y
@@ -62,11 +55,14 @@ read -p "Bitte wähle eine Version von $versions-1 bis $versions-2 oder new für
 if [ $version = new ]; then
 version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/$type/$versions-2
 fi
-if [ $type = 1 ]; then
-if [ $stable-$version = stable-$version ]; then
-
-else
-echo "Version ist ungültig!"
+if [ $type = stable ]; then
+version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/stable/$version
+fi
+if [ $type = beta ]; then
+version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/beta/$version
+fi
+if [ $type = alpha ]; then
+version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/$version
 fi
 sudo url
 sudo dpkg -i $file
