@@ -28,8 +28,8 @@ if [ $type = 1 ]; then
 type=stable
 curl -o cache-1 https://raw.githubusercontent.com/rgb5100/einfachtool/main/stable/versions-1
 curl -o cache-2 https://raw.githubusercontent.com/rgb5100/einfachtool/main/stable/versions-2
-versions-1=`cat cache-1`
-versions-2=`cat cache-2`
+versions_1=`cat cache-1`
+versions_2=`cat cache-2`
 rm -R cache-1
 rm -R cache-2
 fi
@@ -37,8 +37,8 @@ if [ $type = 2 ]; then
 type=beta
 curl -o cache https://raw.githubusercontent.com/rgb5100/einfachtool/main/beta/versions-1
 curl -o cache https://raw.githubusercontent.com/rgb5100/einfachtool/main/beta/versions-2
-versions-1=`cat cache-1`
-versions-2=`cat cache-2`
+versions_1=`cat cache-1`
+versions_2=`cat cache-2`
 rm -R cache-1
 rm -R cache-2
 fi
@@ -46,14 +46,14 @@ if [ $type = 3 ]; then
 type=alpha
 curl -o cache-1 https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/versions-1
 curl -o cache-2 https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/versions-2
-versions-1=`cat cache-1`
-versions-2=`cat cache-2`
+versions_1=`cat cache-1`
+versions_2=`cat cache-2`
 rm -R cache-1
 rm -R cache-2
 fi
-read -p "Bitte wähle eine Version von $versions-1 bis $versions-2 oder new für die neuste Version: " version
+read -p "Bitte wähle eine Version von $versions_1 bis $versions_2 oder new für die neuste Version: " version
 if [ $version = new ]; then
-version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/$type/$versions-2
+version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/$type/$versions_2
 fi
 if [ $type = stable ]; then
 version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/stable/$version
