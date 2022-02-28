@@ -15,7 +15,7 @@ remove_deb
 fi
 }
 url () {
-curl -o $file $version-url
+curl -o $file $version_url
 chmod 700 $file
 }
 remove_deb () {
@@ -53,16 +53,16 @@ rm -R cache-2
 fi
 read -p "Bitte wähle eine Version von $versions_1 bis $versions_2 oder new für die neuste Version: " version
 if [ $version = new ]; then
-version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/$type/$versions_2
+version_url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/$type/$versions_2
 fi
 if [ $type = stable ]; then
-version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/stable/$version
+version_url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/stable/$version
 fi
 if [ $type = beta ]; then
-version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/beta/$version
+version_url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/beta/$version
 fi
 if [ $type = alpha ]; then
-version-url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/$version
+version_url=https://raw.githubusercontent.com/rgb5100/einfachtool/main/alpha/$version
 fi
 sudo url
 sudo dpkg -i $file
